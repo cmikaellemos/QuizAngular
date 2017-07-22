@@ -1,0 +1,21 @@
+.menu ul{
+    padding:0px;
+    margin:0px;
+    list-style:none;
+}
+
+.menu ul li {
+    display: inline;
+}
+
+.menu {
+    text-align: center;
+}
+
+.wait {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 20px;
+}
+

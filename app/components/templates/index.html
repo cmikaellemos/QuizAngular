@@ -1,0 +1,10 @@
+<div class="showQuestions">
+    <div class="wait" ng-controller="QuestionsController" ng-show="!objSelected">
+        <h2>Selecione uma area de conhecimento!</h2>
+        <div layout="row" layout-md="column" layout-align="space-around">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+    </div>
+    <div ui-view="showQuestions">
+    </div>
+</div>

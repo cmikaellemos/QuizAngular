@@ -1,0 +1,50 @@
+<div>
+
+    <md-toolbar class="md-theme-light">
+        <h2 class="md-toolbar-tools">
+            <span>Perguntas</span>
+        </h2>
+    </md-toolbar>
+
+    <md-content>
+        <md-list>
+            <md-list-item class="md-3-line" ng-repeat="obj in objSelected">
+                <div class="md-list-item-text">
+                    <p style="font-size: 14pt; text-align: justify; padding: 20px">{{obj.question}}</p>
+                    <div ng-show="obj.isShowDetail">
+                    <form>
+                        <label>
+                            <input type="radio" ng-model="choiceItem" value="0">
+                            {{obj.items[0]}}
+                        </label><br/>
+                        <label>
+                            <input type="radio" ng-model="choiceItem" value="1">
+                            {{obj.items[1]}}
+                        </label><br/>
+                        <label>
+                            <input type="radio" ng-model="choiceItem" value="2">
+                            {{obj.items[2]}}
+                        </label><br/>
+                        <label>
+                            <input type="radio" ng-model="choiceItem" value="3">
+                            {{obj.items[3]}}
+                        </label><br/>
+                        <label>
+                            <input type="radio" ng-model="choiceItem" value="4">
+                            {{obj.items[4]}}
+                        </label><br/>
+                    </form>
+                    </div>
+
+                    <md-button class="md-secondary"  ng-if="!obj.isShowDetail" ng-click="showDetail(obj)">Responder</md-button>
+                    <md-button class="md-secondary" ng-if="obj.isShowDetail" ng-click="closeDetail(obj)">Esconder</md-button>
+                    <md-button class="md-secondary" ng-if="obj.isShowDetail" ng-disabled="!choiceItem" ng-click="verifyQuestion(obj, choiceItem, $event)">Confirmar</md-button>
+
+                </div>
+                <md-divider ng-if="!$last">
+                </md-divider>
+            </md-list-item>
+        </md-list>
+    </md-content>
+
+</div>
